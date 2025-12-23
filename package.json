@@ -3,7 +3,7 @@
   "displayName": "Universal Installer Config",
   "description": "Support for the .uic files used in UniversalInstaller",
   "repository": {"url": "https://github.com/michaelmadell/UniversalInstallerVSCodeExtension"},
-  "version": "20.25.12.1",
+  "version": "1.0.1",
   "engines": {
     "vscode": "^1.107.0"
   },

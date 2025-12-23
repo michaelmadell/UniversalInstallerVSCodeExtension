@@ -60,18 +60,13 @@ This extension contributes the following settings:
 
 ## Release Notes
 
-### 1.0.0
+### 1.0.1
 
 -   Initial release with support for `.uic` syntax highlighting.
     
 -   Added snippets for `Setup`, `Files`, `Dirs`, and `Registry` sections.
     
 -   Integrated path constant recognition.
-
-### 20.25.12.1
-
--   Updated Versioning
--   Added Repo to the package.json
     
 
 ----------

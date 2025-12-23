@@ -1,65 +1,74 @@
-# universal-installer-config README
 
-This is the README for your extension "universal-installer-config". After writing up a brief description, we recommend including the following sections.
+# Universal Installer Config (.uic) for VS Code
+
+This extension provides first-class support for the **Universal Installer Project** configuration files. It transforms standard text editing into a specialized development environment for building installers by adding custom syntax highlighting and intelligent code snippets tailored to the `.uic` format.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+### 🎨 Custom Syntax Highlighting
 
-For example if there is an image subfolder under your extension project workspace:
+Unlike standard INI highlighters, this extension recognizes the specific architectural blocks of the Universal Installer:
 
-\!\[feature X\]\(images/feature-x.png\)
+-   **Core Sections:** Distinct coloring for `[Setup]`, `[Files]`, `[Registry]`, `[Icons]`, and more.
+    
+-   **Constants:** Highlights built-in path constants like `{app}`, `{pf}`, and `{tmp}`.
+    
+-   **Booleans & Keys:** Specialized highlighting for installer-specific keys (e.g., `AppName`, `Compression`) and their values.
+    
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+### 💡 Intelligent Snippets
+
+Accelerate your workflow with boilerplate templates for common installer tasks:
+
+-   **`[Setup]` Block:** Quickly generate a full application configuration including versioning and publisher details.
+    
+-   **`file` Entry:** Add new files with pre-defined flags like `ignoreversion` and `recurse`.
+    
+-   **`reg` Entry:** Create registry keys with dropdown choices for `Root` types (HKLM, HKCU, etc.).
+    
+
+## Getting Started
+
+1.  Create a new file or rename an existing configuration to end in `.uic` (e.g., `install-config.uic`).
+    
+2.  Open the file in VS Code.
+    
+3.  The language mode should automatically switch to **Universal Installer Config**.
+    
+4.  Start typing `[` or `file` to see the intelligent suggestions in action.
+    
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+This extension is designed to work with the **Universal Installer Project** core engine. Ensure your compiler and wizard executables are updated to recognize the `.uic` extension.
 
 ## Extension Settings
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
 This extension contributes the following settings:
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+-   `uic.enableSnippets`: Enable/disable the custom installer code snippets (Default: `true`).
+    
+-   `uic.formatOnSave`: (Optional) Automatically cleans up whitespace in your `.uic` files.
+    
 
 ## Known Issues
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+-   **Punycode Warnings:** You may see a deprecation warning in the extension host logs if using older versions of VS Code; this is a platform-level notice and does not affect extension performance.
+    
+-   **Large Files:** Very large configuration files (>5000 lines) may experience slight syntax highlighting latency.
+    
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
-
 ### 1.0.0
 
-Initial release of ...
+-   Initial release with support for `.uic` syntax highlighting.
+    
+-   Added snippets for `Setup`, `Files`, `Dirs`, and `Registry` sections.
+    
+-   Integrated path constant recognition.
+    
 
-### 1.0.1
+----------
 
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+**[Universal Installer Project on GitHub](https://www.google.com/search?q=https://github.com/michaelmadell/universalinstaller)**

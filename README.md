@@ -67,6 +67,11 @@ This extension contributes the following settings:
 -   Added snippets for `Setup`, `Files`, `Dirs`, and `Registry` sections.
     
 -   Integrated path constant recognition.
+
+### 20.25.12.1
+
+-   Updated Versioning
+-   Added Repo to the package.json
     
 
 ----------

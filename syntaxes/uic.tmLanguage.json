@@ -1,0 +1,36 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "uic",
+	"patterns": [
+		{ "include": "#comments" },
+		{ "include": "#sections" },
+		{ "include": "#keys"     },
+		{ "include": "#values"   }
+	],
+	"repository": {
+		"comments": {
+			"patterns": [{ "match": "(;|#).*$", "name": "comment.line" }]
+		},
+		"sections": {
+		"patterns": [{
+			"match": "^\\[(Setup|Files|Dirs|Icons|Registry|Run|Components|Tasks)\\]",
+			"name": "entity.name.section.uic",
+			"captures": { "1": { "name": "keyword.control.section.uic" } }
+		}]
+		},
+		"keys": {
+		"patterns": [{
+			"match": "^\\b(AppName|AppVersion|AppPublisher|DefaultDirName|Source|DestDir|Recurse|Flags|Filename|Root|Subkey)\\b(?=\\s*=)",
+			"name": "variable.parameter.uic"
+		}]
+		},
+		"values": {
+		"patterns": [
+			{ "match": "=(yes|no|true|false|1|0)\\b", "name": "constant.language.boolean.uic" },
+			{ "match": "\".*?\"", "name": "string.quoted.double.uic" },
+			{ "match": "\\{.*?\\}", "name": "entity.name.variable.property.uic" }
+		]
+		}
+	},
+	"scopeName": "source.uic"
+}

@@ -1,0 +1,29 @@
+{
+  "Setup Section": {
+    "prefix": "[Setup]",
+    "body": [
+      "[Setup]",
+      "AppName=${1:Application Name}",
+      "AppVersion=${2:1.0.0}",
+      "AppPublisher=${3:Publisher}",
+      "DefaultDirName={pf}\\${1:Application Name}",
+      "Compression=yes",
+      "SolidCompression=yes"
+    ],
+    "description": "Full Setup configuration block"
+  },
+  "File Entry": {
+    "prefix": "file",
+    "body": [
+      "Source=\"${1:source_path}\"; DestDir=\"{app}\"; Flags=${2:ignoreversion}; Recurse=${3|yes,no|}"
+    ],
+    "description": "Add a new file entry"
+  },
+  "Registry Entry": {
+    "prefix": "reg",
+    "body": [
+      "Root=${1|HKLM,HKCU,HKCR|}; Subkey=\"Software\\${2:MyCompany}\"; ValueName=\"${3:Name}\"; ValueType=string; ValueData=\"${4:Data}\""
+    ],
+    "description": "Add a registry key"
+  }
+}

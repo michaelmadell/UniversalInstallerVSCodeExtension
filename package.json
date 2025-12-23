@@ -1,0 +1,31 @@
+{
+  "name": "universal-installer-config",
+  "displayName": "Universal Installer Config",
+  "description": "Support for the .uic files used in UniversalInstaller",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.107.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "uic",
+      "aliases": ["uic", "uic"],
+      "extensions": [".uic"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "uic",
+      "scopeName": "source.uic",
+      "path": "./syntaxes/uic.tmLanguage.json"
+    }],
+    "snippets": [
+      {
+        "language": "uic",
+        "path": "./snippets/uic.code-snippets"
+      }
+    ]
+  }
+}
